@@ -15,6 +15,14 @@ public class ContaTests {
         Assertions.assertEquals(conta.getSaldo(), saldoEsperado);
     }
     @Test
+    public void saqueNaoDeveFazerNadaQuandoMontanteNegativo(){
+        Conta conta = new Conta(1L, 500.00);
+        conta.deposito(-200.00);
+        Double saldoEsperado = 500.00;
+
+        Assertions.assertEquals(conta.getSaldo(), saldoEsperado);
+    }
+    @Test
     public void saqueDeveDecrementarSaldoQuandoSaldoSuficiente(){
         Conta conta = new Conta(2L, 320.00);
         conta.saque(100.00);

@@ -25,7 +25,9 @@ public class Conta {
     }
 
     public void deposito(double montante) {
-        this.saldo = saldo + montante;
+        if(montante > 0){
+            this.saldo = saldo + montante;
+        }
     }
 
     public void saque(double valor) {
