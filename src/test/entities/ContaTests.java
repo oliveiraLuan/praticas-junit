@@ -38,4 +38,17 @@ public class ContaTests {
         Conta conta = ContaFactory.criarConta(1000.0);
         Assertions.assertThrows(IllegalArgumentException.class, () -> conta.saque(2000.00));
     }
+
+    @Test
+    public void saqueTotalDeveZerarSaldoERetornarValorSacado(){
+        Double valorInicial = 500.0;
+        Double saldoEsperado = 0.0;
+
+        Conta conta = ContaFactory.criarConta(valorInicial);
+
+        Double valorSacado = conta.saqueTotal();
+
+        Assertions.assertEquals(conta.getSaldo(), saldoEsperado);
+        Assertions.assertEquals(valorInicial, valorSacado);
+    }
 }

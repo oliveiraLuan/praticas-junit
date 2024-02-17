@@ -36,4 +36,9 @@ public class Conta {
         }
         saldo = saldo - valor;
     }
+    public Double saqueTotal() {
+        Double valorSacado = saldo;
+        saldo = 0.0;
+        return valorSacado;
+    }
 }
